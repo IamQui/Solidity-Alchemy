@@ -60,4 +60,33 @@ contract valueTypes {
         console.logInt(bMin);
     }
 
+    uint256 a;
+    uint256 b;
+    bool public c;
+
+    function store() external {
+        a = b;
+
+        //uint256 z = b;
+    }
+
+    function example1() private pure {
+        // private: call me within this contract
+        // pure: I can't read/write to storage
+    }
+
+    function example2() internal view {
+        // internal: call me within this contract (+inheritance)
+        // view: I can read from storage, but not write
+    }
+
+    function example3() public payable {
+        // public: call me inside & outside this contract
+        // payable: send me some either!
+    }
+
+    function example4() external {
+        // external: call me from outside this contract
+    }
+
 }
